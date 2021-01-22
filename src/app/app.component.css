@@ -1,5 +1,7 @@
 
-
+.container-router-outlet{
+    width: -moz-available;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.

@@ -20,7 +20,10 @@ export class UserService {
 		}
 	}
 
-	getUser(){
+	getName(){
 		return localStorage.getItem('name');
+	}
+	getUsername(){
+		return localStorage.getItem('username');
 	}
 }

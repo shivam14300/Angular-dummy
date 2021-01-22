@@ -6,15 +6,11 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { TopBarComponent } from "./top-bar/top-bar.component";
-import { ProductListComponent } from "./product-list/product-list.component";
-import { ProductAlertsComponent } from "./product-alerts/product-alerts.component";
-import { ProductDetailsComponent } from "./product-details/product-details.component";
-import { CartService } from "./_services/cart.service";
 import { AuthenticationService } from "./_services/auth.service";
 import { UserService } from "./_services/user.service";
-import { CartComponent } from "./cart/cart.component";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -22,9 +18,7 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: "", component: ProductListComponent },
-      { path: "products/:productId", component: ProductDetailsComponent },
-      { path: "cart", component: CartComponent },
+      { path: "", component: ProfileComponent },
       { path: "login", component: LoginComponent },
       { path: "register", component: RegisterComponent }
     ])
@@ -32,15 +26,12 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent,
-    ProductAlertsComponent,
-    ProductDetailsComponent,
-    CartComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   bootstrap: [AppComponent],
-  providers: [CartService, AuthenticationService, UserService]
+  providers: [AuthenticationService, UserService]
 })
 export class AppModule {}
 

@@ -16,7 +16,7 @@ export class TopBarComponent {
 	) {}
 	
 	ngOnInit(): void {
-		this.name = this.userService.getUser();
+		this.name = this.userService.getName();
 	}
 	
 	logout(){
