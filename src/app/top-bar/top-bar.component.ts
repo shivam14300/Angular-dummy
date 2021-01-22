@@ -1,12 +1,24 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { AuthenticationService } from './../_services/auth.service';
 @Component({
-  selector: 'app-top-bar',
-  templateUrl: './top-bar.component.html',
-  styleUrls: ['./top-bar.component.css']
+	selector: 'app-top-bar',
+	templateUrl: './top-bar.component.html',
+	styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent {
 
+	constructor(
+		private router: Router,
+		private authservice: AuthenticationService
+	) {}
+
+	logout(){
+		this.authservice.logout()
+		.subscribe(res => {
+			this.router.navigate(['/login']);
+		});
+	}
 }
 
 
