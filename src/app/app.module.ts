@@ -12,16 +12,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import {AppRoutingModule} from './app-routing.module'; 
+
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: "", component: ProfileComponent },
-      { path: "login", component: LoginComponent },
-      { path: "register", component: RegisterComponent }
-    ])
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
