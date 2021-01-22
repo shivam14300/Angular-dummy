@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
 	onSubmit(){
 		this.authenticationService.login(this.f.username.value, this.f.password.value)
 		.subscribe(res => {
-			console.log("res = ", res);
 			this.router.navigate(['/']);
 		});
 	}

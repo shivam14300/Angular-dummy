@@ -7,7 +7,7 @@ export class AuthenticationService {
     }
 
     public login(username, password): Observable<any> {
-        if(username === 'admin' && password === 'pass'){
+        if(username === localStorage.getItem('username') && password === localStorage.getItem('password')){
 			localStorage.setItem('login','1');
 			return of('true');
 		}
