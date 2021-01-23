@@ -12,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 
-import {AppRoutingModule} from './app-routing.module'; 
+import {AppRoutingModule} from './app-routing.module';
+import { FamilyMemberComponent } from './family-member/family-member.component'; 
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {AppRoutingModule} from './app-routing.module';
     TopBarComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    FamilyMemberComponent
   ],
   bootstrap: [AppComponent],
   providers: [AuthenticationService, UserService]

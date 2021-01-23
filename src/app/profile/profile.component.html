@@ -1,5 +1,25 @@
 <app-top-bar></app-top-bar>
 <div class="profile-container">
-    <p>Name : {{ name }}</p>
-    <p>Username : {{ username }}
+    <div>
+        <p>Name : {{ name }}</p>
+        <p>Username : {{ username }}</p>
+    </div>
+    <div *ngFor="let member of members">
+        <app-family-member [member]="member"></app-family-member>
+    </div>
+    <form [formGroup]="addMemberForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="Relation">Relation</label>
+            <input type="text" formControlName="relation" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">
+                Add Family Member
+            </button>
+        </div>
+    </form>
 </div>
